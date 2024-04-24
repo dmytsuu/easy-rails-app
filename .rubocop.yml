@@ -19,3 +19,4 @@ AllCops:
    - 'db/**/*'
    - 'bin/*'
    - 'config/**/*'
+   - 'vendor/'
