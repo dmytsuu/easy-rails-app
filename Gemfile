@@ -30,6 +30,7 @@ group :development, :test do
   gem 'bullet'
   gem 'bundler-audit'
   gem 'pry'
+  gem 'rubocop'
   gem 'rubocop-rails', require: false
 end
 
