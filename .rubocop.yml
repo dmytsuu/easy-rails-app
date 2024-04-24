@@ -10,3 +10,12 @@
 # See https://docs.rubocop.org/rubocop/configuration
 
 require: rubocop-rails
+
+Documentation:
+  Enabled: false
+
+AllCops:
+  Exclude:
+   - 'db/**/*'
+   - 'bin/*'
+   - 'config/**/*'
