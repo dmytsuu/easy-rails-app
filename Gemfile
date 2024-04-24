@@ -30,7 +30,7 @@ group :development, :test do
 end
 
 group :test do
-  gem 'factory_bot'
+  gem 'factory_bot_rails'
   gem 'ffaker'
   gem 'rspec-rails', '~> 6.1.0'
 end
