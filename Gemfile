@@ -26,12 +26,13 @@ gem 'turbo-rails'
 gem 'tzinfo-data', platforms: %i[windows jruby]
 
 group :development, :test do
+  gem 'brakeman'
   gem 'bullet'
+  gem 'bundler-audit'
   gem 'pry'
 end
 
 group :development do
-  gem 'brakeman'
   gem 'rubocop-rails', require: false
   gem 'web-console'
 end
