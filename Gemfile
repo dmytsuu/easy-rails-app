@@ -30,10 +30,10 @@ group :development, :test do
   gem 'bullet'
   gem 'bundler-audit'
   gem 'pry'
+  gem 'rubocop-rails', require: false
 end
 
 group :development do
-  gem 'rubocop-rails', require: false
   gem 'web-console'
 end
 
