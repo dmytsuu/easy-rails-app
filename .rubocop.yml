@@ -11,7 +11,7 @@
 
 require: rubocop-rails
 
-Documentation:
+Style/Documentation:
   Enabled: false
 
 AllCops:
