@@ -26,16 +26,18 @@ gem 'turbo-rails'
 gem 'tzinfo-data', platforms: %i[windows jruby]
 
 group :development, :test do
+  gem 'bullet'
   gem 'pry'
+end
+
+group :development do
+  gem 'brakeman'
+  gem 'rubocop-rails', require: false
+  gem 'web-console'
 end
 
 group :test do
   gem 'factory_bot_rails'
   gem 'ffaker'
   gem 'rspec-rails', '~> 6.1.0'
-end
-
-group :development do
-  gem 'rubocop-rails', require: false
-  gem 'web-console'
 end
