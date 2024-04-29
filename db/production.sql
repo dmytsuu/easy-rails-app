@@ -1,0 +1,1 @@
+CREATE DATABASE easy_rails_app_production;
