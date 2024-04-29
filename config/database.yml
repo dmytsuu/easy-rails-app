@@ -81,5 +81,5 @@ production:
   <<: *default
   host: <%= ENV["DB_HOST"] %>
   database: easy_rails_app_production
-  username: <%= ENV["DATABASE_USER"] %>
-  password: <%= ENV["DATABASE_PASSWORD"] %>
+  username: <%= ENV["POSTGRES_USER"] %>
+  password: <%= ENV["POSTGRES_PASSWORD"] %>
