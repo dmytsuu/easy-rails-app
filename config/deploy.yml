@@ -23,6 +23,7 @@ registry:
 env:
   secret:
     - RAILS_MASTER_KEY
+    - DB_HOST
     - POSTGRES_DB
     - POSTGRES_USER
     - POSTGRES_PASSWORD
