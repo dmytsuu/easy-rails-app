@@ -6,7 +6,7 @@ image: dmytsuu/easy-rails-app
 
 # Deploy to these servers.
 servers:
-  - 161.35.65.147
+  - <%= ENV.fetch('APP_HOST') %>
 
 # Credentials for your image host.
 registry:
