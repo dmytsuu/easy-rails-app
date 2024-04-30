@@ -25,6 +25,7 @@ class PostsController < ApplicationController
     @post.user = current_user
 
     if @post.save
+      Posts::PostCreateJob.perform_later(@post.id)
       redirect_to post_url(@post), notice: 'Post was successfully created.'
     else
       render :new, status: :unprocessable_entity
