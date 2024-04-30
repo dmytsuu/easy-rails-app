@@ -1,0 +1,15 @@
+.w-min-full
+  h2
+    | Forgot your password?
+  = form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f|
+    = render "devise/shared/error_messages", resource: resource
+    .my-5
+      = f.label :email
+      br
+      = f.email_field :email,
+        autofocus: true,
+        autocomplete: "email",
+        class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full"
+    .my-5
+      = f.submit "Send me reset password instructions", class: "rounded-lg py-3 px-5 bg-blue-600 text-white inline-block font-medium cursor-pointer"
+  = render "devise/shared/links"

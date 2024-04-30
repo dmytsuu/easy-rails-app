@@ -1,0 +1,24 @@
+.w-min-full
+    h2
+    | Log in
+    = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+        .my-5
+            = f.label :email
+            br
+            = f.email_field :email,
+                autofocus: true,
+                autocomplete: "email",
+                class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full"
+        .my-5
+            = f.label :password
+            br
+            = f.password_field :password,
+                autocomplete: "current-password",
+                class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full"
+        - if devise_mapping.rememberable?
+            .my-5.flex.items-center
+                = f.check_box :remember_me
+                = f.label :remember_me, class: 'mx-2'
+        .my-5
+            = f.submit "Log in", class: "rounded-lg py-3 px-5 bg-blue-600 text-white inline-block font-medium cursor-pointer"
+    = render "devise/shared/links"
