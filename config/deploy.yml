@@ -6,7 +6,13 @@ image: dmytsuu/easy-rails-app
 
 # Deploy to these servers.
 servers:
-  - <%= ENV.fetch('APP_HOST') %>
+  web:
+    hosts:
+      - <%= ENV.fetch('APP_HOST') %>
+  sidekiq:
+    cmd: bundle exec sidekiq
+    hosts:
+      - <%= ENV.fetch('APP_HOST') %>
 
 # Credentials for your image host.
 registry:
