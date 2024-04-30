@@ -21,8 +21,6 @@ registry:
 # Inject ENV variables into containers (secrets come from .env).
 # Remember to run `kamal env push` after making changes!
 env:
-  clear:
-    DB_HOST: 165.22.78.59
   secret:
     - RAILS_MASTER_KEY
     - POSTGRES_DB
@@ -48,7 +46,7 @@ builder:
 accessories:
   db:
     image: postgres:latest
-    host: 165.22.78.59
+    host: <%= ENV.fetch('DB_HOST') %>
     port: 5432
     env:
       clear:
