@@ -1,0 +1,11 @@
+p style="color: green" = notice
+
+h1 Mobile apps
+
+#mobile_apps
+  - @mobile_apps.each do |mobile_app|
+    == render mobile_app
+    p
+      = link_to "Show this mobile app", mobile_app
+
+= link_to "New mobile app", new_mobile_app_path

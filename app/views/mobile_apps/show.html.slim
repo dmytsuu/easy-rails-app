@@ -1,0 +1,10 @@
+p style="color: green" = notice
+
+== render @mobile_app
+
+div
+  => link_to "Edit this mobile app", edit_mobile_app_path(@mobile_app)
+  '|
+  =< link_to "Back to mobile apps", mobile_apps_path
+
+  = button_to "Destroy this mobile app", @mobile_app, method: :delete
