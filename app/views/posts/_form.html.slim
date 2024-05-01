@@ -1,10 +1,7 @@
 = form_with(model: post, class: "contents") do |form|
   - if post.errors.any?
     #error_explanation.bg-red-50.text-red-500.px-3.py-2.font-medium.rounded-lg.mt-3 data-controller="bridge--flash-message"
-      ul
-        - post.errors.each do |error|
-          li
-            = error.full_message
+      = post.errors.full_messages.to_sentence
   .my-5
     = form.label :title
     = form.text_field :title, class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full"

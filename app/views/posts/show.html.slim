@@ -1,11 +1,10 @@
-= content_for :title, @post.title
-.mx-auto.md:w-2/3.w-full.flex
-  .mx-auto
-    - if notice.present?
-      p#notice.py-2.px-3.bg-green-50.mb-5.text-green-500.font-medium.rounded-lg.inline-block
-        = notice
-    = render @post
-    .flex.flex-col.md:flex-row.items-center
-      = link_to "Edit this post", edit_post_path(@post), class: "mt-2 rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium"
-      = button_to "Destroy this post", post_path(@post), method: :delete, class: "mt-2 rounded-lg py-3 px-5 bg-gray-100 font-medium"
-      = link_to "Back to posts", posts_path, class: "mt-2 rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium"
+= content_for :title, @post.title.truncate(27)
+.mx-auto.md:w-2/3.w-full.flex.flex-col.md:flex-row
+  - if notice.present?
+    p#notice.py-2.px-3.bg-green-50.mb-5.text-green-500.font-medium.rounded-lg.inline-block data-controller="bridge--flash-message"
+      = notice
+  = render @post
+  .flex.flex-col.md:flex-row.items-start.mt-2
+    = link_to "Edit this post", edit_post_path(@post), class: "mt-2 rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium"
+    = button_to "Destroy this post", post_path(@post), method: :delete, class: "mt-2 rounded-lg py-3 px-5 bg-red-600 font-medium text-white"
+    = link_to "Back to posts", posts_path, class: "mt-2 rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium hide-on-native"
