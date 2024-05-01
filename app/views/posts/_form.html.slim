@@ -1,9 +1,6 @@
 = form_with(model: post, class: "contents") do |form|
   - if post.errors.any?
-    #error_explanation.bg-red-50.text-red-500.px-3.py-2.font-medium.rounded-lg.mt-3
-      h2
-        = pluralize(post.errors.count, "error")
-        |  prohibited this post from being saved:
+    #error_explanation.bg-red-50.text-red-500.px-3.py-2.font-medium.rounded-lg.mt-3 data-controller="bridge--flash-message"
       ul
         - post.errors.each do |error|
           li

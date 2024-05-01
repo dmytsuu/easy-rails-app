@@ -10,6 +10,8 @@ class Post < ApplicationRecord
 
   friendly_id :title, use: %i[slugged finders]
 
+  validates :title, :content, presence: true
+
   pg_search_scope :by_title,
                   against: :title,
                   using: { trigram: { word_similarity: true } }

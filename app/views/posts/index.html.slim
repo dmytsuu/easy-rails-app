@@ -1,6 +1,7 @@
+= content_for :title, 'Posts'
 .w-full
   - if notice.present?
-    p#notice.py-2.px-3.bg-green-50.mb-5.text-green-500.font-medium.rounded-lg.inline-block
+    p#notice.py-2.px-3.bg-green-50.mb-5.text-green-500.font-medium.rounded-lg.inline-block data-controller="bridge--flash-message"
       = notice
   .flex.justify-between.items-center
     h1.font-bold.text-4xl
